@@ -1,0 +1,245 @@
+* {
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; 
+}
+
+html {
+	background-color: #3691BE;
+}
+
+body {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+	margin: 1% 0;
+}
+
+ul li {
+	list-style-type: square;
+}
+
+img.clickable {
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+input,
+select,
+textarea {
+	border: 1px solid #333;
+}
+
+input[type='submit'] {
+	background: #3691BE;
+	border: 0;
+	color: #fff;
+	cursor: pointer;
+	margin-top: 1em;
+	padding: 0.5em 1em;
+}
+
+input[type='submit']:active {
+	background: #3691BE;
+}
+
+input[type='submit']:disabled, input[type='submit']:disabled:hover {
+	background: #ccc;
+	color: #666;
+}
+
+input[type='submit']:hover {
+	background: #2B88AD;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+
+legend {
+	border-bottom: 1px solid #666;
+	font-size: 1.25em;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	margin: auto;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+table, th, td {
+	border: 0px;
+}
+
+th, td {
+	padding: 10px 5px;
+}
+
+th {
+	background: #3691BE;
+	color: #fff;
+	font-weight: normal;
+	text-align: left;
+}
+
+tbody tr:nth-of-type(even) {
+	background: #8bc7df;
+}
+
+div.notification {
+	margin: 1em 0;
+	padding: 1.5em 1em;
+	width: auto;
+}
+
+div.error {
+	background: #E51400;
+	color: #fff;
+}
+
+div.warning {
+	background: #E3C800;
+	color: #000;
+}
+
+div.success {
+	background: #60A917;
+	color: #fff;
+}
+
+div.info {
+	background: #4390DF;
+	color: #fff;
+}
+
+div#head-wrapper {
+	background: #333;
+	height: 4.5em;
+	padding: 0 1em;
+	width: auto;
+}
+
+div#head-container {
+	color: #fff;
+	height: inherit;
+	width: auto;
+}
+
+div#head-container a {
+	color: #fff;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+div#head-container a:hover {
+	color: #ddd;
+}
+
+div#head-container img {
+	cursor: pointer;
+	float: left;
+}
+
+div#head-container img:hover {
+	background: #222;
+}
+
+div#head-container img:active {
+	background: #111;
+}
+
+div#head-container p.user-info {
+	float: right;
+	font-size: 0.85em;
+	margin: 0.5em;
+	padding: 0;
+}
+
+div#head-usernav {
+	clear: right;
+	float: right;
+	font-size: 1.15em;
+}
+
+div#head-usernav ul {
+	margin: 0;
+	padding: 0;
+}
+
+div#head-usernav li {
+	display: inline-block;
+	margin: 0 0.75em;
+}
+
+@media screen and (max-width: 625px) {
+    div#head-usernav {
+    	font-size: 0.85em;
+    	margin-top: 0.7em;
+    }
+
+	div#head-usernav li {
+		display: inline-block;
+		margin: 0 0.5em;
+	}
+}
+
+div#main-wrapper {
+	-webkit-box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.5);
+	-moz-box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.5);
+	box-shadow: 0px 10px 5px 0px rgba(50, 50, 50, 0.5);
+	background: #eee;
+	overflow: auto;
+	padding: 1em 1.5em;
+	width: auto;
+}
+
+div#steps-container {
+	width: auto;
+}
+
+ol#nav-steps {
+	background: #DDD;
+	margin: 0;
+	padding: 0;
+	width: auto;
+}
+
+ol#nav-steps li {
+	background: #DDD;
+	cursor: default;
+	display: inline-block;
+	font-size: 1.25em;
+	margin: 0;
+	padding: 1.5em 0.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 200px;
+}
+
+ol#nav-steps li.active {
+	background: #BBB;
+}
+
+ol#nav-steps li.completed {
+	color: #999;
+}
+
+div#footer-wrapper {
+	color: #fff;
+	margin: 1em auto;
+	text-align: center;
+	width: auto;
+}
