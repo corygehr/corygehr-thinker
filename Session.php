@@ -20,11 +20,17 @@ class THINKER_Session
 	 */
 	private function __construct()
 	{
+		global $_INFO;
+
 		// Start session
 		session_start();
 
 		// Get and store the Session ID
 		$this->sessionID = session_id();
+
+		// Create a CSRF token
+		$_SESSION['CSRF_TOKEN'] = base64_encode(openssl_random_pseudo_bytes(32));
+		$_INFO['csrfToken'] = $_SESSION['CSRF_TOKEN'];
 	}
 
 	/**
@@ -117,6 +123,19 @@ class THINKER_Session
 	public function varExists($var)
 	{
 		return isset($_SESSION[$var]);
+	}
+
+	/**
+	 * verifyCsrfToken()
+	 * Verifies that a csrfToken input matches that for the session
+	 *
+	 * @access public
+	 * @param $inputVarName: Name of the CSRF Token Parameter (default: csrfToken)
+	 * @return True if Valid Token, False if Invalid
+	 */
+	public function verifyCsrfToken($inputVarName = 'csrfToken')
+	{
+		return (getPageVar($inputVarName, 'str', 'REQUEST', true, false) == $_SESSION['CSRF_TOKEN']);
 	}
 
 	/**

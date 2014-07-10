@@ -86,12 +86,12 @@ function errorRedirect($no = 404)
  * @author Cory Gehr
  * @param $name: Variable Name
  * @param $type: Variable Type (default: str)
- * @param $source: Variable source (GET, POST, COOKIE)
+ * @param $source: Variable source (GET, POST, COOKIE, REQUEST) (default: REQUEST)
  * @param $required: Flag to tell if the variable is required (default: false)
  * @param $allowHtml: Flag for allowing HTML (default: false)
  * @return Variable Value, or NULL if Validation Fails
  */
-function getPageVar($name, $type = 'str', $source, $required = false, $allowHtml = false)
+function getPageVar($name, $type = 'str', $source = 'REQUEST', $required = false, $allowHtml = false)
 {
 	switch($source)
 	{
@@ -105,6 +105,10 @@ function getPageVar($name, $type = 'str', $source, $required = false, $allowHtml
 
 		case 'COOKIE':
 			$value = (isset($_COOKIE[$name]) == true ? $_COOKIE[$name] : null);
+		break;
+
+		case 'REQUEST':
+			$value = (isset($_REQUEST[$name]) == true ? $_REQUEST[$name] : null);
 		break;
 	}
 

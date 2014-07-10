@@ -11,11 +11,13 @@
 class DBConnection extends PDO
 {
 	// Private Class Variables
-	private $engine; 
+	private $driver; 
 	private $host; 
-	private $database; 
+	private $port;
+	private $schema; 
 	private $user; 
 	private $pass;
+	private $autoConnect;
 
 	/**
 	 * __construct()
@@ -27,31 +29,62 @@ class DBConnection extends PDO
 	public function __construct($settings)
 	{ 
 		// Get desired configuration options
-		$user = $settings['user'];
-		$pass = $settings['password'];
-		$type = $settings['driver'];
+		$this->user = $settings['user'];
+		$this->pass = $settings['password'];
+		$this->driver = $settings['driver'];
 
 		// DSN Properties
-		$host = $settings['host'];
-		$port = $settings['port'];
-		$schema = $settings['schema'];
+		$this->host = $settings['host'];
+		$this->port = $settings['port'];
+		$this->schema = $settings['schema'];
+
+		// Additional options
+		$this->autoConnect = $settings['autoConnect'];
 
 		// PDO Options
 		//$options = $settings['pdo_options'];
 
+		if($this->autoConnect)
+		{
+			$this->connect(true);
+		}
+	}
+
+	/**
+	 * connect()
+	 * Opens a connection to the database
+	 *
+	 * @author Cory Gehr
+	 * @param $dieOnError: Kills script execution on Exception (default: false)
+	 * @access public
+	 * @return True on Success, False on Failure
+	 */
+	public function connect($dieOnError = false)
+	{
 		// Data Source String
-		$dsn = $type . ":dbname=$schema;host=$host;port=$port";
+		$dsn = $this->driver . ":dbname=" . $this->schema . " ;host=" . $this->host . ";port=" . $this->port;
 
 		// Attempt to make connection
 		try
 		{
 			// '@' suppresses errors from this function. We output our own message if there's a problem
-			@parent::__construct($dsn, $user, $pass);
+			@parent::__construct($dsn, $this->user, $this->pass);
 		}
 		catch(PDOException $err)
 		{
-			die("Unable to connect to the database server. Details: " . $err->getMessage() . ".");
+			if($dieOnError)
+			{
+				die("Unable to connect to the database server. Details: " . $err->getMessage() . ".");
+			}
+			else
+			{
+				pushMessage("Failed to connect to database '" . $this->schema . "'. Details: " . $err->getMessage(), 'error');
+			}
+
+			return false;
 		}
+
+		return true;
 	}
 
 	/**
