@@ -217,6 +217,3 @@ pip-log.txt
 ####################
 ## THINKer Specific
 ####################
-
-# Ignore configuration files
-*.ini
