@@ -30,7 +30,6 @@ class THINKER_Session
 
 		// Create a CSRF token
 		$_SESSION['CSRF_TOKEN'] = base64_encode(openssl_random_pseudo_bytes(32));
-		$_INFO['csrfToken'] = $_SESSION['CSRF_TOKEN'];
 	}
 
 	/**
