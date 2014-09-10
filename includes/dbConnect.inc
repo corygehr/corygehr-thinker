@@ -39,7 +39,7 @@ class DBConnection extends PDO
 		$this->schema = $settings['schema'];
 
 		// Additional options
-		$this->autoConnect = $settings['autoConnect'];
+		$this->autoConnect = $settings['auto_connect'];
 
 		// PDO Options
 		//$options = $settings['pdo_options'];
@@ -62,7 +62,7 @@ class DBConnection extends PDO
 	public function connect($dieOnError = false)
 	{
 		// Data Source String
-		$dsn = $this->driver . ":dbname=" . $this->schema . " ;host=" . $this->host . ";port=" . $this->port;
+		$dsn = $this->driver . ":dbname=" . $this->schema . ";host=" . $this->host . ";port=" . $this->port;
 
 		// Attempt to make connection
 		try
