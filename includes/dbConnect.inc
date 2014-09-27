@@ -5,7 +5,6 @@
 	 * Note that this is the only class that does NOT extend from other (locally created) objects
 	 *
 	 * @author Cory Gehr
-	 * @version 0.1
 	 */
 	
 class DBConnection extends PDO
@@ -17,7 +16,7 @@ class DBConnection extends PDO
 	private $schema; 
 	private $user; 
 	private $pass;
-	private $autoConnect;
+	private $auto_connect;
 
 	/**
 	 * __construct()
@@ -39,12 +38,12 @@ class DBConnection extends PDO
 		$this->schema = $settings['schema'];
 
 		// Additional options
-		$this->autoConnect = $settings['auto_connect'];
+		$this->auto_connect = $settings['auto_connect'];
 
 		// PDO Options
 		//$options = $settings['pdo_options'];
 
-		if($this->autoConnect)
+		if($this->auto_connect)
 		{
 			$this->connect(true);
 		}

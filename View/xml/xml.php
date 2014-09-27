@@ -16,11 +16,12 @@ class THINKER_View_xml extends THINKER_View_Common
      */
     public function display()
     {
+    	global $_SECTION;
+
 	    // Display the header
         header('Content-type: text/xml');
 		
 		// Get data
-		$name = $this->section->sectionName;
 		$data = $this->section->getData();
 		
 		// Get the resultset we should use
@@ -28,13 +29,13 @@ class THINKER_View_xml extends THINKER_View_Common
 		
         if(empty($data))
 		{
-            echo "<$name>\n<error>No data received from the object.</error>\n</$name>";
+            echo "<$_SECTION>\n<error>No data received from the object.</error>\n</$_SECTION>";
 			exit();
         }
 		else
 		{
 		    // Return the encoded data
-			$xmlObject = new SimpleXMLElement("<?xml version=\"1.0\"?><$name></$name>");
+			$xmlObject = new SimpleXMLElement("<?xml version=\"1.0\"?><$_SECTION></$_SECTION>");
 			
 			$this->arrayToXml($data, $xmlObject);
 			

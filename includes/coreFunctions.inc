@@ -47,11 +47,11 @@ function __autoload($class)
  */
 function createUrl($section, $subsection = null, $params = array())
 {
-	$url =	BASE_URL . 'index.php?section=' . urlencode($section);
+	$url =	BASE_URL . 'index.php?s=' . urlencode($section);
 
 	if($subsection)
 	{
-		$url .= "&subsection=" . urlencode($subsection);
+		$url .= "&su=" . urlencode($subsection);
 	}
 	
 	// Add URL Parameters

@@ -16,9 +16,9 @@ class THINKER_Session
 	 * Constructor for the THINKER_Session Class
 	 *
 	 * @author Cory Gehr
-	 * @access private
+	 * @access protected
 	 */
-	private function __construct()
+	protected function __construct()
 	{
 		global $_INFO;
 
@@ -30,44 +30,6 @@ class THINKER_Session
 
 		// Create a CSRF token
 		$_SESSION['CSRF_TOKEN'] = base64_encode(openssl_random_pseudo_bytes(32));
-	}
-
-	/**
-	 * singleton()
-	 * Returns a single instance of the session class
-	 *
-	 * @author Joe Stump <joe@joestump.net>
-	 * @access public
-	 * @return mixed Instance of Session
-	 */
-	public static function singleton()
-	{
-		if(!isset(self::$instance))
-		{
-			$className = __CLASS__;
-			self::$instance = new $className;
-		}
-		
-		return self::$instance;
-	}
-	
-	/**
-	 * destroy()
-	 * Destroys a session
-	 *
-	 * @author Cory Gehr
-	 * @access public
-	 */
-	public function destroy()
-	{
-		// Clear all session variables
-		foreach($_SESSION as $var => $val)
-		{
-			$_SESSION[$var] = null;
-		}
-		
-		// Destroy the session
-		session_destroy();
 	}
 	
 	/**
@@ -83,6 +45,18 @@ class THINKER_Session
 		trigger_error('Clone is not allowed for ' . __CLASS__, E_USER_ERROR);
 	}
 	
+	/**
+	 * __destruct()
+	 * Destructor for the THINK_Session class
+	 *
+	 * @access public
+	 */
+	public function __destruct()
+	{
+		// Write a session closure to the PHP log
+		session_write_close();
+	}
+
 	/**
 	 * __get()
 	 * Returns a requested Session Variable
@@ -112,6 +86,44 @@ class THINKER_Session
 	}
 	
 	/**
+	 * destroy()
+	 * Destroys a session
+	 *
+	 * @author Cory Gehr
+	 * @access public
+	 */
+	public function destroy()
+	{
+		// Clear all session variables
+		foreach($_SESSION as $var => $val)
+		{
+			$_SESSION[$var] = null;
+		}
+		
+		// Destroy the session
+		session_destroy();
+	}
+
+	/**
+	 * singleton()
+	 * Returns a single instance of the session class
+	 *
+	 * @author Joe Stump <joe@joestump.net>
+	 * @access public
+	 * @return mixed Instance of Session
+	 */
+	public static function singleton()
+	{
+		if(!isset(self::$instance))
+		{
+			$className = SESSION_CLASS;
+			self::$instance = new $className;
+		}
+		
+		return self::$instance;
+	}
+
+	/**
 	 * varExists()
 	 * Checks for the existence of a Session Variable
 	 *
@@ -135,17 +147,5 @@ class THINKER_Session
 	public function verifyCsrfToken($inputVarName = 'csrfToken')
 	{
 		return (getPageVar($inputVarName, 'str', 'REQUEST', true, false) == $_SESSION['CSRF_TOKEN']);
-	}
-
-	/**
-	 * __destruct()
-	 * Destructor for the THINK_Session class
-	 *
-	 * @access public
-	 */
-	public function __destruct()
-	{
-		// Write a session closure to the PHP log
-		session_write_close();
 	}
 }

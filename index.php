@@ -3,18 +3,12 @@
 	 * index.php
 	 * Entry point for the web application
 	 * This page handles most of the page load logic
-	 * The rest is contains in the individual Model files
+	 * The rest is contains in the individual Section files
 	 * 
 	 * @author Cory Gehr <gehrc621@gmail.com>
 	 */
 
-// Import system configurations
-$_CONFIG = parse_ini_file('includes/sysConfig.ini', true);
-$_DB_CONFIG = parse_ini_file('includes/dbConfig.ini', true);
-
-// Include required files
-require_once('includes/dbconnect.inc');
-require_once('includes/coreFunctions.inc');
+// Run initialization script
 require_once('includes/init.inc');
 
 /******************
@@ -22,9 +16,9 @@ require_once('includes/init.inc');
 *******************/
 
 // Load specified section
-if(isset($_GET['section']))
+if(isset($_GET['s']))
 {
-	$_SECTION = getPageVar('section', 'str', 'GET', true);
+	$_SECTION = getPageVar('s', 'str', 'GET', true);
 }
 else
 {
@@ -50,9 +44,9 @@ if(file_exists($sectionFile))
 	$sectionConfig = parse_ini_file($sectionPath . 'config.ini', true);
 
 	// Check for sub-section
-	if(isset($_GET['subsection']))
+	if(isset($_GET['su']))
 	{
-		$_SUBSECTION = getPageVar('subsection', 'str', 'GET', true);
+		$_SUBSECTION = getPageVar('su', 'str', 'GET', true);
 	}
 	else
 	{

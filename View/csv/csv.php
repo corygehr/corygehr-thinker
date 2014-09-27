@@ -32,11 +32,12 @@ class THINKER_View_csv extends THINKER_View_Common
 	 */
 	public function display()
 	{
+		global $_SECTION;	
 		// Call the constructor in THINKER_View_Common
 		
 		// Headers to tell the browser to download a file
 		header('Content-type: text/csv; charset=utf-8');
-		header('Content-Disposition: attachment; filename="' . $this->section->modelName . '.csv"');
+		header('Content-Disposition: attachment; filename="' . $_SECTION . '.csv"');
 		header('Pragma: no-cache');
 		header('Expires: 0');
 		
@@ -64,7 +65,7 @@ class THINKER_View_csv extends THINKER_View_Common
 			foreach ($headings as $heading)
 			{
 				// Get rid of ints (see DB.inc for why these are there)
-				if(is_string($heading) && $heading != 'id' && $heading != 'uid' && $heading != 'oid' && $heading != 'did' && $heading != 'pid')
+				if(is_string($heading))
 				{
 					$headerTitles[] = $heading;
 					
@@ -114,7 +115,7 @@ class THINKER_View_csv extends THINKER_View_Common
 		else
 		{
 			$header = null;
-			$expdata = "No Records Found or else this Section does not support CSV Exports.";
+			$expdata = "No Records Found or perhaps this Section does not support CSV Exporting.";
 		}
 		
 		// Output data
