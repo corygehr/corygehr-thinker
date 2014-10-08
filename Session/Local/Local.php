@@ -12,9 +12,9 @@ class THINKER_Session_Local extends THINKER_Session
 	 * __construct()
 	 * Constructor for the THINKER_Session_Local class
 	 *
-	 * @access private
+	 * @access protected
 	 */
-	private function __construct()
+	protected function __construct()
 	{
 		// Call parent constructor
 		parent::__construct();

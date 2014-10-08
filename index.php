@@ -8,8 +8,11 @@
 	 * @author Cory Gehr <gehrc621@gmail.com>
 	 */
 
+// Get autoloader
+require_once(__DIR__.'/includes/autoload.inc');
+
 // Run initialization script
-require_once('includes/init.inc');
+require_once(__DIR__.'/includes/init.inc');
 
 /******************
   Controller Start  
