@@ -64,6 +64,48 @@ class THINKER_View_html extends THINKER_View_Common
 	}
 
 	/**
+	 * authPageSection()
+	 * Checks authorization to a specific section of the page
+	 *
+	 * @author Cory Gehr
+	 * @param $token: Section token
+	 * @param $errorAction: Action to take on error (default: suppress)
+	 * @param $customError: Custom error to display if unauthorized (default: null)
+	 * @return True if Authorized, False on Failure
+	 */
+	private function authPageSection($token, $errorAction = 'suppress', $customError = null)
+	{
+		// Check authorization
+		if($this->section->session->auth('pageSection', array('section' => $_SECTION, 'subsection' => $_SUBSECTION, 'token' => $token)))
+		{
+			// Authorized
+			return true;
+		}
+		else
+		{
+			// Unauthorized, check error actions
+			switch($errorAction)
+			{
+				case 'inline':
+					// Error message
+					if(!$customError)
+					{
+						$message = "<p>[Access Denied to '$token']</p>";
+					}
+					else
+					{
+						$message = $customError;
+					}
+
+					echo $message;
+				break;
+			}
+
+			return false;
+		}
+	}
+
+	/**
 	 * get()
 	 * Gets an item from the $data array, if it exists
 	 *

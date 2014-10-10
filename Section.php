@@ -10,8 +10,7 @@ abstract class THINKER_Section
 {
 	protected $reflectionClass; // Contains information about the class (ReflectionClass)
 	protected $data;            // Contains the data being passed back from the Section
-	protected $session;         // Contains session data
-	
+	public $session;         // Contains session object
 	public $view;      // Contains the view being loaded for the section
 	
 	/**
@@ -23,6 +22,8 @@ abstract class THINKER_Section
 	 */
 	public function __construct()
 	{
+		global $_SECTION, $_SUBSECTION;
+
 		// Initialize classInfo with information about the target class
 		$this->reflectionClass = new ReflectionClass($this);
 		$this->data = array();
@@ -41,6 +42,12 @@ abstract class THINKER_Section
 		$sessionClass = SESSION_CLASS;
 		
 		$this->session = $sessionClass::singleton();
+
+		if(!$this->session->auth('section', array('section' => $_SECTION, 'subsection' => $_SUBSECTION)))
+		{
+			// Redirect to error
+			errorRedirect(403);
+		}
 	}
 
 	/**

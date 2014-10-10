@@ -16,3 +16,13 @@
 <p>
 	<?php echo $this->get('message3', 'inline', 'There should not be any more messages.'); ?>
 </p>
+<?php
+	if($this->authPageSection('testSection', 'inline'))
+	{
+?>
+<p>
+	Authorized!
+</p>
+<?php
+	}
+?>

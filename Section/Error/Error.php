@@ -24,6 +24,11 @@ class THINKER_Section_Error extends THINKER_Section
 
 		switch($no)
 		{
+			case 403:
+				$description = 'Unauthorized';
+				$message = 'You are not authorized to view this content. If you feel you have reached this message in error, please contact your administrator.';
+			break;
+
 			case 404:
 				$description = 'The page specified could not be found.';
 				$message = 'Please check the URL you attempted to reach and try again.';

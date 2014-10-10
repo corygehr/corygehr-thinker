@@ -40,9 +40,6 @@ if(file_exists($sectionFile))
 {
 	require_once($sectionFile);
 
-	// Create instance of section
-	$instance = new $_SECTION_CLASS();
-
 	// Load section configuration
 	$sectionConfig = parse_ini_file($sectionPath . 'config.ini', true);
 
@@ -63,6 +60,9 @@ if(file_exists($sectionFile))
 			trigger_error("Could not determine the subsection to load.", E_USER_ERROR);
 		}
 	}
+
+	// Create instance of section
+	$instance = new $_SECTION_CLASS();
 
 	// Attempt to load subsection
 	if(method_exists($_SECTION_CLASS, $_SUBSECTION))

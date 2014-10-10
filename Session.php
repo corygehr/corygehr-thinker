@@ -86,6 +86,21 @@ class THINKER_Session
 	}
 	
 	/**
+	 * auth()
+	 * Checks user access to an object
+	 *
+	 * @author Cory Gehr
+	 * @access public
+	 * @param $objType: Object Type (default: section)
+	 * @param $params: Object parameters (default: Empty Array)
+	 * @return True if Granted, False if Denied
+	 */
+	public function auth($objType = 'section', $params = array())
+	{
+		return true;
+	}
+
+	/**
 	 * destroy()
 	 * Destroys a session
 	 *
