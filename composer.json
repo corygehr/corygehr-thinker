@@ -1,0 +1,17 @@
+{
+	"name": "thinker",
+	"description": "The THINKer Framework used by the Penn State Dance Marathon",
+	"autoload": {
+		"psr-4": { 
+			"\\": "app/"
+		}
+	},
+	"require": {
+		"php": ">=5.3",
+		"thon/thinker": "dev-master"
+	},
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*"
+    },
+	"minimum-stability": "stable"
+}

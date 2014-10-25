@@ -1,0 +1,45 @@
+<?php
+	/**
+	 * Error.php
+	 * Contains the Class for the Error Controller
+	 *
+	 * @author Cory Gehr
+	 */
+
+class Error extends Controller
+{
+	/**
+	 * info()
+	 * Passes data back for the 'info' subsection
+	 *
+	 * @access public
+	 */
+	public function info()
+	{
+		// Error number
+		$no = getPageVar('no', 'int', 'GET');
+
+		$description = 'An unspecified error has occurred.';
+		$message = 'Please contact the server administrator.';
+
+		switch($no)
+		{
+			case 403:
+				$description = 'Unauthorized';
+				$message = 'You are not authorized to view this content. If you feel you have reached this message in error, please contact your administrator.';
+			break;
+
+			case 404:
+				$description = 'The page specified could not be found.';
+				$message = 'Please check the URL you attempted to reach and try again.';
+			break;
+		}
+
+		$this->set('description', $description);
+		$this->set('message', $message);
+		$this->set('number', $no);
+
+		return true;
+	}
+}
+?>
