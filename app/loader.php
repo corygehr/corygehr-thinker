@@ -5,6 +5,7 @@
 	 *
 	 * @author Cory Gehr
 	 */
+
 // Load specified section
 if(isset($_GET['s']))
 {
@@ -28,7 +29,8 @@ if(class_exists(SECTION))
 		// Load subsection from class
 		try
 		{
-			$_SUBSECTION = SECTION::defaultSubsection();
+			$sectionName = SECTION;
+			$_SUBSECTION = $sectionName::defaultSubsection();
 		}
 		catch(Exception $ex)
 		{
@@ -78,7 +80,7 @@ if(class_exists(SECTION))
 else
 {
 	// Error redirect
-	errorRedirect(404);
+	Thinker\Redirect::error(404);
 }
 
 // Close database connection

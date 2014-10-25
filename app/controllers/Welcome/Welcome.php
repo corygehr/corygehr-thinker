@@ -6,8 +6,10 @@
 	 * @author Cory Gehr
 	 */
 
-class Welcome extends Controller
+class Welcome extends Thinker\Controller
 {
+	private static $defaultSubsection = 'info';
+
 	/**
 	 * info()
 	 * Passes data back for the 'info' subsection
@@ -19,7 +21,7 @@ class Welcome extends Controller
 		// Create a SampleObj object and play with it a bit
 		$myMessage = "This is a test of the THINKer Framework.";
 
-		$NewObject = new THINKER_Object_SampleObj($myMessage);
+		$NewObject = new SampleObj($myMessage);
 
 		$this->set('message1', $NewObject->getMessage());
 

@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Error extends Controller
+class Error extends Thinker\Controller
 {
 	/**
 	 * info()

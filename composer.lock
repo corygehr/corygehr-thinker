@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac8c09c03163f7a03edaff21e9d76684",
+    "hash": "8f9b7f6517dfda797766c8b776df6322",
     "packages": [
         {
             "name": "thon/thinker",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/penn-state-dance-marathon/thon-thinker.git",
-                "reference": "5dd8d55a8a61084e970089e388166e3cfbabcad6"
+                "reference": "45316b7666c0e9273df958585cbb8f742cf9abdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker/zipball/5dd8d55a8a61084e970089e388166e3cfbabcad6",
-                "reference": "5dd8d55a8a61084e970089e388166e3cfbabcad6",
+                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker/zipball/45316b7666c0e9273df958585cbb8f742cf9abdc",
+                "reference": "45316b7666c0e9273df958585cbb8f742cf9abdc",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "framework",
                 "thon"
             ],
-            "time": "2014-10-25 00:13:14"
+            "time": "2014-10-25 01:18:41"
         }
     ],
     "packages-dev": [

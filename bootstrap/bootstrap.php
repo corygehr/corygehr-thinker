@@ -16,7 +16,7 @@ $_CONFIG = parse_ini_file(__DIR__.'/../app/config/sysConfig.ini', true);
 require_once(__DIR__.'/globals.php');
 
 // Set error handler
-set_error_handler(array('Error', 'errorHandler'));
+set_error_handler(array('Thinker\Error', 'errorHandler'));
 
 // Open database connections
 $_DB_CONFIG = parse_ini_file(__DIR__.'/../app/config/dbConfig.ini', true);
