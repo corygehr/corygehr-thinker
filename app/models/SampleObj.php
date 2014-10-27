@@ -1,12 +1,12 @@
 <?php
 	/**
-	 * Model/SampleObj.php 
-	 * Contains the THINKER\Model\SampleObj class
+	 * models/SampleObj.php 
+	 * Contains the SampleObj class
 	 *
 	 * @author Cory Gehr
 	 */
 
-class SampleObj extends Model
+class SampleObj extends Thinker\Model
 {
 	private $someMessage;
 
