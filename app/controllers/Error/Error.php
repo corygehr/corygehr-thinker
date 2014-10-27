@@ -9,6 +9,19 @@
 class Error extends Thinker\Controller
 {
 	/**
+	 * defaultSubsection()
+	 * Returns the default subsection for this Controller
+	 *
+	 * @access public
+	 * @static
+	 * @return string Subsection Name
+	 */
+	public static function defaultSubsection()
+	{
+		return 'info';
+	}
+
+	/**
 	 * info()
 	 * Passes data back for the 'info' subsection
 	 *
@@ -17,7 +30,7 @@ class Error extends Thinker\Controller
 	public function info()
 	{
 		// Error number
-		$no = getPageVar('no', 'int', 'GET');
+		$no = Thinker\Request::get('no', 'GET');
 
 		$description = 'An unspecified error has occurred.';
 		$message = 'Please contact the server administrator.';
