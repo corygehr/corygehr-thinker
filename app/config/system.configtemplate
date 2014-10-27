@@ -1,0 +1,83 @@
+;
+; sysConfig.ini
+; THINKer System Configuration File
+;
+
+; ---------------------
+; Core System Settings
+; ---------------------
+;
+; Settings shared across applications are here
+[core]
+
+; --------------------
+; TODO: Application Registry
+; --------------------
+;
+; Register the applications that will be handled
+; Normally there is only one, but some sites have 
+; an internal vs. external configuration so these 
+; can differ
+;
+; All applications will have their own unique folder
+;[applications]
+;application[]   = think-internal
+;application[]   = think-external
+
+; From this point on, prefix each section with the respective application
+
+; ---------------
+; think-internal
+; ---------------
+[thinker_general]
+base_url        = localhost:8000
+use_ssl         = false
+environment     = Test
+default_section = Welcome
+session_class   = Open
+
+; View Settings
+[thinker_view]
+default_view    = Html
+
+; html View Settings
+[thinker_view-html]
+template        = sample
+
+; ---------------
+; think-internal
+; ---------------
+;[think-internal_general]
+;base_url        = localhost/THINKer-FW/www/
+;use_ssl         = false
+;environment     = test
+;default_section = Welcome
+;default_view    = html
+;session_class   = LocalAuth
+
+; View Settings
+;[think-internal_view]
+;default_view    = html
+
+; html View Settings
+;[think-internal_view-html]
+;template        = sample
+
+; ---------------
+; think-internal
+; ---------------
+;[think-internal_general]
+;base_url        = localhost/THINKer-FW/www/
+;use_ssl         = false
+;environment     = test
+;default_section = Welcome
+;default_view    = html
+;session_class   = LocalAuth
+
+; View Settings
+;[think-internal_view]
+;default_view    = html
+
+; html View Settings
+[think-internal_view-html]
+template        = sample
