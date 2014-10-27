@@ -8,7 +8,7 @@
 ?>
 	<div id='head-wrapper'>
 		<div id='head-container'>
-			<a href='<?php echo BASE_URL; ?>'><img src='View/html/style/sample/images/logo.png' alt='THINKer'></a>
+			<a href='<?php echo BASE_URL; ?>'><img src='html/sample/images/logo.png' alt='THINKer'></a>
 			<p class='user-info'>
 				Welcome!
 			</p>
