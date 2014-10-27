@@ -9,7 +9,7 @@
 // Load specified section
 if(isset($_GET['s']))
 {
-	define('SECTION', getPageVar('s', 'str', 'GET', true));
+	define('SECTION', Thinker\Request::get('s', true));
 }
 else
 {
@@ -19,18 +19,22 @@ else
 // Check if the section specified exists
 if(class_exists(SECTION))
 {
+	// Declare sectionName in variable so it can be used in strings, as function calls, etc.
+	$sectionName = SECTION;
+
 	// Check for sub-section
 	if(isset($_GET['su']))
 	{
-		define('SUBSECTION', getPageVar('su', 'str', 'GET', true));
+		$subsectionName = Thinker\Request::get('su', true);
+		define('SUBSECTION', $subsectionName);
 	}
 	else
 	{
 		// Load subsection from class
 		try
 		{
-			$sectionName = SECTION;
-			$_SUBSECTION = $sectionName::defaultSubsection();
+			$subsectionName = $sectionName::defaultSubsection();
+			define('SUBSECTION', $subsectionName);
 		}
 		catch(Exception $ex)
 		{
@@ -39,18 +43,18 @@ if(class_exists(SECTION))
 	}
 
 	// Create instance of section
-	$instance = new $_SECTION_CLASS();
+	$instance = new $sectionName;
 
 	// Attempt to load subsection
-	if(method_exists($_SECTION_CLASS, $_SUBSECTION))
+	if(method_exists($sectionName, $subsectionName))
 	{
 		// Call method
-		$result = $instance->$_SUBSECTION();
+		$result = $instance->$subsectionName();
 	}
 	else
 	{
 		// Error redirect
-		errorRedirect(404);
+		Thinker\Redirect::error(404);
 	}
 
 	// Compile info array
@@ -58,23 +62,16 @@ if(class_exists(SECTION))
 	$_INFO['section'] = $_SECTION;
 	$_INFO['subsection'] = $_SUBSECTION;
 
-	if($result)
-	{
-		// Create a view
-		$view = View::factory($instance->view, $instance);
+	// Create a view
+	$view = Thinker\View::factory($instance->view, $instance);
 
-		if($view)
-		{
-			$view->display();
-		}
-		else
-		{
-			trigger_error("Failed to generate the View.", E_USER_ERROR);
-		}
+	if($view)
+	{
+		$view->display();
 	}
 	else
 	{
-		trigger_error("Subsection did not load successfully.", E_USER_ERROR);
+		trigger_error("Failed to generate the View.", E_USER_ERROR);
 	}
 }
 else
