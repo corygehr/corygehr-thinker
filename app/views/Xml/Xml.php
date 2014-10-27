@@ -16,8 +16,6 @@ class Xml extends Common
      */
     public function display()
     {
-    	global $_SECTION;
-
 	    // Display the header
         header('Content-type: text/xml');
 		
@@ -29,13 +27,13 @@ class Xml extends Common
 		
         if(empty($data))
 		{
-            echo "<$_SECTION>\n<error>No data received from the object.</error>\n</$_SECTION>";
+            echo "<" . SECTION . ">\n<error>No data received from the object.</error>\n</" . SECTION . ">";
 			exit();
         }
 		else
 		{
 		    // Return the encoded data
-			$xmlObject = new SimpleXMLElement("<?xml version=\"1.0\"?><$_SECTION></$_SECTION>");
+			$xmlObject = new SimpleXMLElement("<?xml version=\"1.0\"?><" . SECTION . "></" . SECTION. ">");
 			
 			$this->arrayToXml($data, $xmlObject);
 			

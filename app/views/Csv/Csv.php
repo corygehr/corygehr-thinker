@@ -1,7 +1,7 @@
 <?php
 	/**
 	 * Csv.php
-	 * Contains the View\Csv class
+	 * Contains the Csv class
 	 * Outputs a CSV file with the passed data
 	 *
 	 * @author Cory Gehr
@@ -14,11 +14,11 @@ class Csv extends Common
 	 *
 	 * @author Cory Gehr
 	 * @access public
-	 * @param Section $section: Section being displayed
+	 * @param Section $section Section being displayed
 	 */
-	public function __construct(Section $section)
+	public function __construct(Controller $section)
 	{
-		// Call the constructor in View\Common (sets the Section)
+		// Call the constructor in Common (sets the Section)
 		parent::__construct($section);
 	}
 
@@ -31,12 +31,11 @@ class Csv extends Common
 	 */
 	public function display()
 	{
-		global $_SECTION;	
-		// Call the constructor in View\Common
+		// Call the constructor in Common
 		
 		// Headers to tell the browser to download a file
 		header('Content-type: text/csv; charset=utf-8');
-		header('Content-Disposition: attachment; filename="' . $_SECTION . '.csv"');
+		header('Content-Disposition: attachment; filename="' . SECTION . '.csv"');
 		header('Pragma: no-cache');
 		header('Expires: 0');
 		
@@ -44,7 +43,7 @@ class Csv extends Common
 		$tmpData = $this->section->getData();
 		
 		// Get the resultset we should use
-		$set = getPageVar('set', 'str');
+		$set = Request::get('set', true);
 		
 		// Variables to store the data
 		$header = null;
