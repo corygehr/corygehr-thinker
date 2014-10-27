@@ -10,7 +10,7 @@
 require_once(__DIR__.'/autoload.php');
 
 // Import system configurations
-$_CONFIG = parse_ini_file(__DIR__.'/../app/config/sysConfig.ini', true);
+$_CONFIG = parse_ini_file(__DIR__.'/../app/config/system.ini', true);
 
 // Add-in globals
 require_once(__DIR__.'/globals.php');
@@ -19,7 +19,7 @@ require_once(__DIR__.'/globals.php');
 set_error_handler(array('Thinker\Error', 'errorHandler'));
 
 // Open database connections
-$_DB_CONFIG = parse_ini_file(__DIR__.'/../app/config/dbConfig.ini', true);
+$_DB_CONFIG = parse_ini_file(__DIR__.'/../app/config/database.ini', true);
 
 foreach($_DB_CONFIG as $dbName => $dbSettings)
 {
