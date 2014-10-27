@@ -16,21 +16,26 @@ class Html extends Common
 	 */
 	public function display()
 	{
-		global $_DB, $_CONFIG, $_MESSAGES, $_SECTION, $_SUBSECTION;
+		global $_DB, $_CONFIG, $_MESSAGES;
 
 		// Get the style used
 		$style = $_CONFIG['thinker_view_html']['template'];
-		$styleDir = "View/html/style/$style";
+		$styleDir = "html/$style/" . $_CONFIG['thinker_view-html']['template'];
+
+		// Get the controller's directory so we know where the html file is located
+		$controllerDir = dirname(dirname(dirname(__FILE__))) . "/controllers";
 
 		// Get the filename for the section's action template
-		$tplFile = 'Section/' . $_SECTION . '/html/' . $_SUBSECTION . '.tpl';
-		$iniFile = 'Section/' . $_SECTION . '/config.ini';
+		$tplFile = "{$controllerDir}/" . SECTION . "/html/" . SUBSECTION . ".tpl";
+		$iniFile = "{$controllerDir}/" . SECTION . "/config.ini";
 
 		// Ensure file exists
 		if(!file_exists($tplFile) || !file_exists($iniFile))
 		{
+			//var_dump($tplFile);
+			//die(var_dump($iniFile));
 			// Redirect to error
-			errorRedirect(404);
+			Thinker\Redirect::error(404);
 			exit();
 		}
 
