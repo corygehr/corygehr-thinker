@@ -8,7 +8,18 @@
 
 class Welcome extends Thinker\Controller
 {
-	private static $defaultSubsection = 'info';
+	/**
+	 * defaultSubsection()
+	 * Returns the default subsection for this Controller
+	 *
+	 * @access public
+	 * @static
+	 * @return string Subsection Name
+	 */
+	public static function defaultSubsection()
+	{
+		return 'info';
+	}
 
 	/**
 	 * info()
@@ -30,8 +41,6 @@ class Welcome extends Thinker\Controller
 		$NewObject->setMessage($newMessage);
 
 		$this->set('message2', $NewObject->getMessage());
-
-		return true;
 	}
 }
 ?>
