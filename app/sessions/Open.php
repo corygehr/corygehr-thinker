@@ -7,11 +7,7 @@
 	 * @author Cory Gehr
 	 */
 
-namespace \Session;
-
-use Thinker;
-
-class Open extends Session
+class Open extends Thinker\Session
 {
 	/**
 	 * __construct()
