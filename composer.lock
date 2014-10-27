@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/penn-state-dance-marathon/thon-thinker-lib.git",
-                "reference": "ba4f48c446a9a9512d05397ea09a79c00e091a0d"
+                "reference": "557627b415074444a70a8fb52c1ff693c035b8a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker-lib/zipball/ba4f48c446a9a9512d05397ea09a79c00e091a0d",
-                "reference": "ba4f48c446a9a9512d05397ea09a79c00e091a0d",
+                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker-lib/zipball/557627b415074444a70a8fb52c1ff693c035b8a0",
+                "reference": "557627b415074444a70a8fb52c1ff693c035b8a0",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "framework",
                 "thon"
             ],
-            "time": "2014-10-25 01:23:58"
+            "time": "2014-10-25 01:43:54"
         }
     ],
     "packages-dev": [
