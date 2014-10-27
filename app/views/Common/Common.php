@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Common extends View
+class Common extends Thinker\View
 {
 	protected $section = null; // Section being used
 
