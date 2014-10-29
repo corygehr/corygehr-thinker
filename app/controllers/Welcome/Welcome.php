@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Welcome extends Thinker\Controller
+class Welcome extends Thinker\Framework\Controller
 {
 	/**
 	 * defaultSubsection()

@@ -16,14 +16,14 @@ $_CONFIG = parse_ini_file(__DIR__.'/../app/config/system.ini', true);
 require_once(__DIR__.'/globals.php');
 
 // Set error handler
-set_error_handler(array('Thinker\Error', 'errorHandler'));
+set_error_handler(array('Thinker\Framework\Error', 'errorHandler'));
 
 // Open database connections
 $_DB_CONFIG = parse_ini_file(__DIR__.'/../app/config/database.ini', true);
 
 foreach($_DB_CONFIG as $dbName => $dbSettings)
 {
-	$_DB[$dbName] = new Thinker\Database($dbSettings);
+	$_DB[$dbName] = new Thinker\DataSource\Database($dbSettings);
 }
 
 // Clear DB settings array

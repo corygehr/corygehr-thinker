@@ -7,7 +7,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Open extends Thinker\Session
+class Open extends Thinker\Framework\Session
 {
 	/**
 	 * __construct()

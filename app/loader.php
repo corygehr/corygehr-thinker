@@ -9,7 +9,7 @@
 // Load specified section
 if(isset($_GET['s']))
 {
-	define('SECTION', Thinker\Request::get('s', true));
+	define('SECTION', Thinker\Http\Request::get('s', true));
 }
 else
 {
@@ -25,7 +25,7 @@ if(class_exists(SECTION))
 	// Check for sub-section
 	if(isset($_GET['su']))
 	{
-		$subsectionName = Thinker\Request::get('su', true);
+		$subsectionName = Thinker\Http\Request::get('su', true);
 		define('SUBSECTION', $subsectionName);
 	}
 	else
@@ -54,7 +54,7 @@ if(class_exists(SECTION))
 	else
 	{
 		// Error redirect
-		Thinker\Redirect::error(404);
+		Thinker\Http\Redirect::error(404);
 	}
 
 	// Compile info array
@@ -63,7 +63,7 @@ if(class_exists(SECTION))
 	$_INFO['subsection'] = $_SUBSECTION;
 
 	// Create a view
-	$view = Thinker\View::factory($instance->view, $instance);
+	$view = Thinker\Framework\View::factory($instance->view, $instance);
 
 	if($view)
 	{
@@ -77,7 +77,7 @@ if(class_exists(SECTION))
 else
 {
 	// Error redirect
-	Thinker\Redirect::error(404);
+	Thinker\Http\Redirect::error(404);
 }
 
 // Close database connection

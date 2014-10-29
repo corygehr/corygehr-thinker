@@ -6,13 +6,13 @@
 	 * @author Cory Gehr
 	 */
 
-class Common extends Thinker\View
+class Common extends Thinker\Framework\View
 {
 	protected $section = null; // Section being used
 
 	/**
 	 * __construct()
-	 * Constructor for the THINKER_View_Common class
+	 * Constructor for the View\Common class
 	 *
 	 * @author Cory Gehr
 	 * @access public

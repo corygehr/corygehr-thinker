@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Local extends Session
+class Local extends Thinker\Framework\Session
 {
 	/**
 	 * __construct()

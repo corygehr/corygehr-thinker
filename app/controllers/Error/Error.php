@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class Error extends Thinker\Controller
+class Error extends Thinker\Framework\Controller
 {
 	/**
 	 * defaultSubsection()
@@ -30,7 +30,7 @@ class Error extends Thinker\Controller
 	public function info()
 	{
 		// Error number
-		$no = Thinker\Request::get('no', 'GET');
+		$no = Thinker\Http\Request::get('no', true);
 
 		$description = 'An unspecified error has occurred.';
 		$message = 'Please contact the server administrator.';

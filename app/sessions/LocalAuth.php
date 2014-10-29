@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class LocalAuth extends Session
+class LocalAuth extends Thinker\Framework\Session
 {
 	/**
 	 * __construct()

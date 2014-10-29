@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class _TEMPLATE_ extends Controller
+class _TEMPLATE_ extends Thinker\Framework\Controller
 {
 	// All public functions will be accessible by users via the 'subsection' URL parameter
 	// Therefore, functions should only be public if they'll be accessed by the user to

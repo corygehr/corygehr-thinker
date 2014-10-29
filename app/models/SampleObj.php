@@ -6,7 +6,7 @@
 	 * @author Cory Gehr
 	 */
 
-class SampleObj extends Thinker\Model
+class SampleObj extends Thinker\Framework\Model
 {
 	private $someMessage;
 
