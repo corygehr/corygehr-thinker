@@ -6,6 +6,9 @@
 	 * @author Cory Gehr
 	 */
 
+// Include app-specific globals
+require_once('globals.php');
+
 // Load specified section
 if(isset($_GET['s']))
 {
