@@ -20,7 +20,8 @@ class Html extends Common
 
 		// Get the style used
 		$style = $_CONFIG['thinker_view-html']['template'];
-		$styleDir = "html/$style/" . $_CONFIG['thinker_view-html']['template'];
+		$styleDir = "html/$style";
+		$sharedDir = "html/shared";
 
 		// Get the controller's directory so we know where the html file is located
 		$controllerDir = dirname(dirname(dirname(__FILE__))) . "/controllers";
@@ -32,8 +33,6 @@ class Html extends Common
 		// Ensure file exists
 		if(!file_exists($tplFile) || !file_exists($iniFile))
 		{
-			//var_dump($tplFile);
-			//die(var_dump($iniFile));
 			// Redirect to error
 			Thinker\Redirect::error(404);
 			exit();
