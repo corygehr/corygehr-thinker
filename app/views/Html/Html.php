@@ -19,7 +19,7 @@ class Html extends Common
 		global $_DB, $_CONFIG, $_MESSAGES;
 
 		// Get the style used
-		$style = $_CONFIG['thinker_view_html']['template'];
+		$style = $_CONFIG['thinker_view-html']['template'];
 		$styleDir = "html/$style/" . $_CONFIG['thinker_view-html']['template'];
 
 		// Get the controller's directory so we know where the html file is located
