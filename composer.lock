@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/penn-state-dance-marathon/thon-thinker-lib.git",
-                "reference": "465e9783a94df5d48738f341944280d27988ccea"
+                "reference": "0a53f0cc323a76a6051898dc1c48c14af3f5b0e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker-lib/zipball/465e9783a94df5d48738f341944280d27988ccea",
-                "reference": "465e9783a94df5d48738f341944280d27988ccea",
+                "url": "https://api.github.com/repos/penn-state-dance-marathon/thon-thinker-lib/zipball/0a53f0cc323a76a6051898dc1c48c14af3f5b0e4",
+                "reference": "0a53f0cc323a76a6051898dc1c48c14af3f5b0e4",
                 "shasum": ""
             },
             "require": {
@@ -47,7 +47,7 @@
                 "framework",
                 "thon"
             ],
-            "time": "2014-10-27 20:09:48"
+            "time": "2014-10-29 19:09:50"
         }
     ],
     "packages-dev": [
@@ -111,12 +111,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "62f8cd539ab2e2c25077aeb5f5ed3209acee3612"
+                "reference": "c3e185a27ae59680237c836caecef66c8bd839a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/62f8cd539ab2e2c25077aeb5f5ed3209acee3612",
-                "reference": "62f8cd539ab2e2c25077aeb5f5ed3209acee3612",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c3e185a27ae59680237c836caecef66c8bd839a8",
+                "reference": "c3e185a27ae59680237c836caecef66c8bd839a8",
                 "shasum": ""
             },
             "require": {
@@ -168,7 +168,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-09-01 22:04:15"
+            "time": "2014-10-31 10:06:54"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -358,12 +358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e79045df1eea042d872b0730ede5aac76d0b7f8c"
+                "reference": "fd095e1b99cb5aa26502f6bca85b7643bde31c8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e79045df1eea042d872b0730ede5aac76d0b7f8c",
-                "reference": "e79045df1eea042d872b0730ede5aac76d0b7f8c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/fd095e1b99cb5aa26502f6bca85b7643bde31c8b",
+                "reference": "fd095e1b99cb5aa26502f6bca85b7643bde31c8b",
                 "shasum": ""
             },
             "require": {
@@ -424,7 +424,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-10-27 16:42:36"
+            "time": "2014-11-01 06:01:32"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
