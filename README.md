@@ -1,6 +1,13 @@
-THINKer
-=======
+##THINKer Framework
 
-[![Build Status](https://travis-ci.org/penn-state-dance-marathon/thon-thinker.png)](https://travis-ci.org/penn-state-dance-marathon/thon-thinker)
+Contains the THINKer Framework
 
-Source Code Repository for the THINKer Data Extraction Project
+**Build Statuses**
+
+*master*
+
+[![Build Status](https://travis-ci.org/penn-state-dance-marathon/thon-thinker.svg?branch=master)](https://travis-ci.org/penn-state-dance-marathon/thon-thinker.svg?branch=master)
+
+*development*
+
+[![Build Status](https://travis-ci.org/penn-state-dance-marathon/thon-thinker.svg?branch=development)](https://travis-ci.org/penn-state-dance-marathon/thon-thinker.svg?branch=development)
