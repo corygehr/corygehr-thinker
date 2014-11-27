@@ -1,0 +1,28 @@
+;
+; system.ini
+; THINKer System Configuration File
+;
+
+; --------------------------
+;  ~ Core System Settings ~
+;  Settings shared across applications are here
+; --------------------------
+
+[core]
+; This is a default and only used if the correct application 
+; could not be determined from HTTP_HOST!
+application = thinkerfw
+environment = Test
+
+; --------------------------
+;  ~ Application Registry ~
+;  All applications used need to be registered here.
+;  Normally there is just one, but some sites have 
+;  an internal AND external site, so the configs can differ.
+;  The application name should match the directory in the root.
+;  This is based on the HTTP_HOST value retrieved from PHP.
+; --------------------------
+
+[applications]
+localhost       = thinkerfw
+localhost:8000  = thinkerfw

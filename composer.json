@@ -19,11 +19,18 @@
  	},
 	"autoload": {
 		"classmap": [
-			"app/controllers",
-			"app/models",
-			"app/sessions",
-			"app/tests",
-			"app/views"
+			"shared/models",
+			"shared/sessions",
+			"shared/tests",
+			"shared/views",
+			"testapp/controllers",
+			"testapp/models",
+			"testapp/tests",
+			"testapp/views",
+			"thinkerfw/controllers",
+			"thinkerfw/models",
+			"thinkerfw/tests",
+			"thinkerfw/views"
 		]
 	},
 	"require": {

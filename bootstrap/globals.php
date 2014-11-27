@@ -7,12 +7,8 @@
 	 */
 
 // General Settings
-define('BASE_URL', ($_CONFIG['thinker_general']['use_ssl'] == true ? 'https://' : 'http://') . $_CONFIG['thinker_general']['base_url'] . '/');
-define('ENVIRONMENT', $_CONFIG['thinker_general']['environment']);
-define('SESSION_CLASS', $_CONFIG['thinker_general']['session_class']);
-
-// View Settings
-define('DEFAULT_VIEW', $_CONFIG['thinker_view']['default_view']);
+define('APPLICATION', $_CONFIG['core']['application']);
+define('ENVIRONMENT', $_CONFIG['core']['environment']);
 
 // System
 $_DB       = null;    // Database connection
