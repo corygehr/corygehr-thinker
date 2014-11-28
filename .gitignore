@@ -219,5 +219,6 @@ pip-log.txt
 ####################
 
 /vendor
-sysConfig.ini
-dbConfig.ini
+system.ini
+database.ini
+application.ini
