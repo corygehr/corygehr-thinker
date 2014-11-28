@@ -8,6 +8,9 @@
 
 class Error extends \Thinker\Framework\Controller
 {
+	// Allow all users to access this section
+	protected $allowOpenAccess = true;
+
 	/**
 	 * defaultSubsection()
 	 * Returns the default subsection for this Controller
