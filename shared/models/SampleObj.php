@@ -6,8 +6,6 @@
 	 * @author Cory Gehr
 	 */
 
-namespace ThinkerSample;
-
 class SampleObj extends \Thinker\Framework\Model
 {
 	private $someMessage;

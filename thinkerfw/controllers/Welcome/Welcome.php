@@ -34,7 +34,7 @@ class Welcome extends \Thinker\Framework\Controller
 		// Create a SampleObj object and play with it a bit
 		$myMessage = "This is a test of the THINKer Framework.";
 
-		$NewObject = new SampleObj($myMessage);
+		$NewObject = new \SampleObj($myMessage);
 
 		$this->set('message1', $NewObject->getMessage());
 
