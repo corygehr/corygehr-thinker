@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "435a504058480cd5ad21d2e62a513cb3",
+    "hash": "979866b128cd95cdfabec395f659a708",
     "packages": [
         {
             "name": "thon/thinker-lib",

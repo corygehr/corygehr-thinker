@@ -36,9 +36,11 @@ elseif(class_exists(SECTION))
 {
 	// Set class
 	$fullClass = SECTION;
+	// Change the App directory to the shared space, but load as normal
+	$_APP_CONFIG['general']['directory'] = 'shared';
 }
-// If there's no full class by this point, it doesn't exist in this application
 
+// If there's no full class by this point, it doesn't exist in this application
 if($fullClass)
 {
 	// Check for sub-section
@@ -82,16 +84,38 @@ if($fullClass)
 	$_INFO['subsection'] = $_SUBSECTION;
 
 	// Create a view
-	$fullView = "\\".APP_NAMESPACE."\\{$instance->view}";
-	$view = \Thinker\Framework\View::factory($fullView, $instance);
+	$fullView = null;
 
-	if($view)
+	// First, see if the view is local
+	$localView = "\\".APP_NAMESPACE."\\{$instance->view}";
+
+	if(class_exists($localView))
 	{
-		$view->display();
+		$fullView = $localView;
+	}
+	// If not local, look for a shared view
+	elseif(class_exists("\\".$instance->view))
+	{
+		$fullView = "\\".$instance->view;
+	}
+	// If we're here and still no view, throw an error below...
+
+	if($fullView)
+	{
+		$view = \Thinker\Framework\View::factory($fullView, $instance);
+
+		if($view)
+		{
+			$view->display();
+		}
+		else
+		{
+			trigger_error("Failed to generate the View.", E_USER_ERROR);
+		}
 	}
 	else
 	{
-		trigger_error("Failed to generate the View.", E_USER_ERROR);
+		trigger_error("View '{$instance->view}' was not found.", E_USER_ERROR);
 	}
 }
 else
