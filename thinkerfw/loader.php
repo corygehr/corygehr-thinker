@@ -80,8 +80,8 @@ if($fullClass)
 
 	// Compile info array
 	$_INFO['environment'] = $_CONFIG['core']['environment'];
-	$_INFO['section'] = $_SECTION;
-	$_INFO['subsection'] = $_SUBSECTION;
+	$_INFO['section'] = SECTION;
+	$_INFO['subsection'] = SUBSECTION;
 
 	// Create a view
 	$fullView = null;
