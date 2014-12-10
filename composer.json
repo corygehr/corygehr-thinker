@@ -24,9 +24,6 @@
 			"shared/sessions",
 			"shared/tests",
 			"shared/views",
-			"testapp/controllers",
-			"testapp/models",
-			"testapp/tests",
 			"thinkerfw/controllers",
 			"thinkerfw/models",
 			"thinkerfw/tests"
