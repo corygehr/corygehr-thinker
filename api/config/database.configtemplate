@@ -1,0 +1,12 @@
+; THINKer-FW Schema Configuration
+; Specify pdo_options[] as many times as you'd like to add more PDO Options
+; The name in the [] should be the name of the schema
+[thinker]
+driver        = mysql
+host          = localhost
+port          = 3306
+user          = root
+password      = ""
+schema        = thinker
+auto_connect  = true
+;pdo_options[] = "PDO::ERRMODE_EXCEPTION" Commented out because this seems to break things

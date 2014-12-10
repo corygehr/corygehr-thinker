@@ -4,9 +4,7 @@
 ;
 
 [general]
-directory       = thinkerfw
-namespace       = ThinkerSample
-base_url        = localhost
+base_url        = localhost:8000
 use_ssl         = false
 default_section = Welcome
 session_class   = Open
