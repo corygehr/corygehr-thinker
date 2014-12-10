@@ -16,11 +16,12 @@ class Common extends Thinker\Framework\View
 	 *
 	 * @author Cory Gehr
 	 * @access public
+	 * @param Controller $controller Controller Object
 	 */
-	public function __construct(Section $section)
+	public function __construct(\Thinker\Framework\Controller $controller)
 	{
 		// Set the local section
-		$this->section = $section;
+		$this->section = $controller;
 	}
 }
 ?>
