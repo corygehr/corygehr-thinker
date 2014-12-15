@@ -1,0 +1,46 @@
+<?php
+	/**
+	 * ponder
+	 * Utility application for the THINKer Framework
+	 * 
+	 * @author Cory Gehr
+	 */
+	
+// Include autoloader
+require_once(__DIR__.'/bootstrap/autoload.php');
+
+$version = "0.0.1 alpha";
+
+// Get rid of 'ponder' in array
+array_shift($argv);
+
+// Check for arguments (if none, output usage message)
+if(!empty($argv))
+{
+	// Get verb
+	switch(array_shift($argv))
+	{
+		case 'integrate':
+			// Library database integration script
+			// Get args
+			$library = array_shift($argv);
+			$database = array_shift($argv);
+
+			if($library && $database)
+			{
+				echo "\nIntegrating $library into $database...\n";
+			}
+			else
+			{
+				echo "\n====== Ponder $version =======\n\nUsage:\n\n integrate [libName] [dbConnection]\n\n\t Integrates a THINKer library's database dependencies
+				\n";
+			}
+		break;
+	}
+}
+else
+{
+	echo "\n====== Ponder $version =======\n\nUsage:\n\n integrate [libName] [dbConnection]\n\n\t Integrates a THINKer library's database dependencies
+	\n";
+}
+?>
